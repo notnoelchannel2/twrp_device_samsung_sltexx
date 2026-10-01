@@ -23,7 +23,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/sltexx/dtb.img
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/sltexx/prebuilt/dtb
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00a00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00c00000
@@ -39,8 +39,6 @@ TARGET_KERNEL_CONFIG := cm_exynos5430-slte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/slte
 TARGET_LINUX_KERNEL_VERSION := 3.10
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/exynos-dwc3.0/exynos-ss-udc.0/gadget/lun%d/file"
-
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/sltexx/bootimg.mk
 
@@ -53,6 +51,7 @@ TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
 #TW_INCLUDE_NTFS_3G := true
