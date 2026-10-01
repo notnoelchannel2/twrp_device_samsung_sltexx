@@ -15,7 +15,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(recovery_ramdisk)
 	$(hide) $(COMPRESS_COMMAND) "$(BUILT_RAMDISK_CPIO)"
 	@echo "------- Making recovery image -------"
 	$(hide) $(MKBOOTIMG) \
-		--kernel $(TARGET_PREBUILT_KERNEL) \
+		--kernel $(INSTALLED_KERNEL_TARGET) \
 		--ramdisk $(BUILT_RAMDISK_CPIO).lzma \
 		--cmdline "$(BOARD_KERNEL_CMDLINE)" \
 		--base $(BOARD_KERNEL_BASE) \
