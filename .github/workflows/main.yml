@@ -40,7 +40,7 @@ jobs:
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         python3 ~/.bin/repo init --depth=1 -u https://github.com/NotNoelChannel/platform_manifest_twrp_omni.git -b patch-1
-        sudo git clone --depth 1 --branch android-6.0.1_r61 --single-branch https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8 /opt/toolchains/arm-eabi-4.8/
+        sudo git clone --depth 1 --branch android-4.4.4_r2.0.1 --single-branch https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7 /opt/toolchains/arm-eabi-4.7/
         git clone --branch android-6.0 --single-branch https://github.com/notnoelchannel2/twrp_device_samsung_sltexx.git ~/TWRP/device/samsung/sltexx
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
     - name: Building TWRP
@@ -54,6 +54,7 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
+        export CROSS_COMPILE=/opt/toolchains/arm-eabi-4.7/bin/arm-eabi-
         lunch omni_sltexx-eng
         make -j$(nproc --all) recoveryimage
         export PATH=$OLDPATH
