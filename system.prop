@@ -1,7 +1,6 @@
-ro.hardware=universal5420
-ro.chipname=exynos5420
-ro.arch=exynos5420
+ro.hardware=universal5430
+ro.chipname=exynos5430
+ro.arch=exynos5430
 ro.lcd_min_brightness=0
-ro.lcd_brightness=162
-ro.sf.lcd_density=480
+ro.sf.lcd_density=320
 persist.sys.usb.config=mtp,adb

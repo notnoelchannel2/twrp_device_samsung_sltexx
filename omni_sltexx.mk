@@ -1,5 +1,5 @@
 # Release name
-PRODUCT_RELEASE_NAME := ha3g
+PRODUCT_RELEASE_NAME := sltexx
 
 $(call inherit-product, build/target/product/embedded.mk)
 
@@ -7,8 +7,8 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := ha3g
-PRODUCT_NAME := omni_ha3g
+PRODUCT_DEVICE := sltexx
+PRODUCT_NAME := omni_sltexx
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-N900
+PRODUCT_MODEL := SM-G850F
 PRODUCT_MANUFACTURER := samsung
